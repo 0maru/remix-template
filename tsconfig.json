@@ -8,14 +8,14 @@
     "lib": [
       "DOM",
       "DOM.Iterable",
-      "ES2023"
+      "ESNext"
     ],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "target": "ES2023",
+    "target": "ESNext",
     "strict": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
