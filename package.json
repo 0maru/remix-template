@@ -9,7 +9,8 @@
     "dev": "remix vite:dev --manual",
     "format": "biome format ./app --write",
     "lint": "biome lint --applu ./app",
-    "profile": "remix vite:build --profile"
+    "profile": "remix vite:build --profile",
+    "typecheck": "tsc"
   },
   "keywords": [],
   "author": "",
