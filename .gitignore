@@ -1,0 +1,25 @@
+# misc
+.DS_Store
+*.pem
+
+# dependencies
+**/node_modules
+
+# testing
+/coverage
+
+
+# IDE
+/.idea/
+/.vscode/
+
+/.env
+
+# production
+/build/
+
+/.cache/
+
+
+
+
