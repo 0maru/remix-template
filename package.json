@@ -9,10 +9,17 @@
     "dev": "remix vite:dev --manual",
     "format": "biome format ./app --write",
     "lint": "biome lint --applu ./app",
+    "lint-staged": "lint-staged",
     "profile": "remix vite:build --profile",
     "typecheck": "tsc",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "biome check --apply ./app"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -39,6 +46,8 @@
     "@types/node": "^20.11.2",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
     "storybook": "^7.6.10",
     "typescript": "^5.1.6",
     "vite": "^5.0.0",
