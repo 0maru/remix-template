@@ -1,0 +1,33 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/**"
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  lint:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup node version
+        run: echo "NODE_VERSION=$(cat .tool-versions | grep -oE 'nodejs (.*)' | sed -E 's/nodejs (.*)/\1/')" >> $GITHUB_ENV
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 8
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint
+        run: pnpm lint
