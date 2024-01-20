@@ -1,6 +1,6 @@
 {
   "include": [
-    "remix.env.d.ts",
+    "env.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ],
@@ -16,13 +16,14 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "target": "ESNext",
     "strict": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
-    "noEmit": true
+    "noEmit": true,
+    "skipLibCheck": true
   }
 }
