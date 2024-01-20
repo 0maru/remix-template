@@ -7,16 +7,20 @@ installGlobals()
 
 // storybook で起動しているかを判定する
 const isStorybook = process.argv[1]?.includes('storybook')
+
+console.log(isStorybook)
 export default defineConfig({
   server: {
     port: 3030,
   },
   plugins: [
-    // Remix Vite プラグインはdevサーバ、productionビルドで使用するものなので、
-    // Storybook で使用する場合は除外する
-    isStorybook && remix({
-      ignoredRouteFiles: ['**/.*'],
-    }),
+    ...(isStorybook ? [] : [
+      // Remix Vite プラグインはdevサーバ、productionビルドで使用するものなので、
+      // Storybook で使用する場合は除外する
+      remix({
+        ignoredRouteFiles: ['**/.*'],
+      }),
+    ]),
     tsconfigPaths(),
   ]
 })
