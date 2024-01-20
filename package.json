@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "buid": "remix vite:build",
+    "check": "biome check --apply ./app",
     "dev": "remix vite:dev --manual",
-    "profile": "remix vite:build --profile",
-    "lint" : "biome lint --applu ./app",
     "format": "biome format ./app --write",
-    "check": "biome check --apply ./app"
+    "lint": "biome lint --applu ./app",
+    "profile": "remix vite:build --profile"
   },
   "keywords": [],
   "author": "",
