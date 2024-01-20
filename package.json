@@ -10,6 +10,7 @@
     "format": "biome format ./app --write",
     "lint": "biome lint --applu ./app",
     "lint-staged": "lint-staged",
+    "preinstall": "npx only-allow pnpm",
     "profile": "remix vite:build --profile",
     "typecheck": "tsc",
     "storybook": "storybook dev -p 6006",
@@ -54,6 +55,7 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "engines": {
-    "node": ">=21.0.0"
+    "node": ">=21.0.0",
+    "pnpm": ">=8.14.0"
   }
 }
